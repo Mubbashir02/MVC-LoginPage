@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+    if(Session["UserName"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <div> 
+        <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">welcome @Session["UserName"]</h1>
+        <a href="@Url.Action("Logout","Login")">Logout</a>
+    </div>
+</body>
+</html>
